@@ -1,4 +1,4 @@
-import 'package:chat_messenger_app/features/auth/view/splash_view.dart';
+import 'package:chat_messenger_app/core/constants/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'core/theme/app_theme.dart';
 
@@ -17,12 +17,8 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      routes: {
-        // Define your app routes here
-        '/home': (context) => const HomePage(),
-        '/splash': (context) => const SplashView(),
-      },
-      initialRoute: '/splash',
+      initialRoute: AppRoutes.initialRoute,
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }
