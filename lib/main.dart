@@ -1,9 +1,12 @@
 import 'package:chat_messenger_app/core/constants/app_routes.dart';
+import 'package:chat_messenger_app/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'core/theme/app_theme.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 }
 
 class MyApp extends StatelessWidget {

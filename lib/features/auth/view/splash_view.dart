@@ -1,8 +1,29 @@
+import 'dart:async';
+import 'package:chat_messenger_app/core/constants/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-class SplashView extends StatelessWidget {
+class SplashView extends StatefulWidget {
   const SplashView({super.key});
+
+  @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    super.initState();
+    _startTimer();
+  }
+
+  void _startTimer() {
+    Timer(const Duration(seconds: 2), () {
+      if (mounted) {
+        Navigator.pushReplacementNamed(context, AppRoutes.phoneAuth);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +33,7 @@ class SplashView extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Spacer(),
+            const Spacer(),
             Image.asset('assets/images/logo.png', width: 150, height: 150),
             const SizedBox(height: 8),
             Text(
@@ -41,7 +62,7 @@ class SplashView extends StatelessWidget {
                 fontSize: 14,
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.only(bottom: 20.0),
               child: Text(
