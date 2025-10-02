@@ -47,7 +47,7 @@ class SplashView extends StatelessWidget {
               child: Text(
                 'Version 1.0.0',
                 style: TextStyle(
-                  color: theme.textTheme.bodySmall?.color?.withOpacity(0.5),
+                  color: theme.textTheme.bodySmall?.color?.withAlpha(200),
                   fontSize: 12,
                 ),
               ),
